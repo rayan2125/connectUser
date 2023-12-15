@@ -1,10 +1,17 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { TextInput } from 'react-native-paper'
+import { io } from "socket.io-client";
 
-const Chat = () => {
+const Chat = ({ route }) => {
+  
   return (
-    <View>
-      <Text>Chat</Text>
+    <View style={{ margin: 5, justifyContent: "flex-end", flex: 1 }}>
+      <View >
+        
+        <TextInput
+          mode='outlined' />
+      </View>
     </View>
   )
 }

@@ -5,6 +5,8 @@ import Home from '../screen/home'
 import Profile from '../screen/Tab/profile'
 import Chat from '../screen/Tab/chat'
 import Icon from 'react-native-vector-icons/FontAwesome5'
+import Donate from '../screen/Tab/donate'
+
 const Tab = createBottomTabNavigator()
 const TabNavigation = () => {
     return (
@@ -24,6 +26,8 @@ const TabNavigation = () => {
                 iconName = 'comments';
               } else if (route.name === 'Profile') {
                 iconName = 'user';
+              } else if( route.name === 'Donate'){
+                iconName = 'plus';
               }
     
               return <Icon name={iconName} color={color} size={size} />;
@@ -38,6 +42,11 @@ const TabNavigation = () => {
             <Tab.Screen name='Home' component={Home}
              options={{
                 tabBarLabel: 'Home',
+              }}
+            />
+            <Tab.Screen name='Donate' component={Donate}
+            options={{
+                tabBarLabel: 'Donate',
               }}
             />
             <Tab.Screen name='Chat' component={Chat} 

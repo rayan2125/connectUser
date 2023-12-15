@@ -6,17 +6,19 @@ import Login from '../screen/Auth/login'
 
 import AuthNavigation from './authNavigation'
 import TabNavigation from './tabNavigation'
+import UploadDonation from '../screen/uploadDonation'
+import Cummunication from '../screen/cummunication'
 
 const Stack = createStackNavigator()
 const IndexNaviagtion = () => {
-    const data = null
+   
     return (
         <Stack.Navigator screenOptions={{ headerShown: false }}>
-            {
-                data === "" ?
-                    <Stack.Screen name='Login' component={AuthNavigation} /> :
+           
                     <Stack.Screen name='Home' component={TabNavigation} />
-            }
+                    <Stack.Screen name='UploadDonation' component={UploadDonation}/>
+                    <Stack.Screen name='Cummunication' component={Cummunication}/>
+            
         </Stack.Navigator>
     )
 }

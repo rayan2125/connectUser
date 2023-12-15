@@ -5,10 +5,12 @@ import Icon from "react-native-vector-icons/FontAwesome5";
 
 import { data } from '../../assets/DummyJSON/user';
 import { Donation } from '../../assets/DummyJSON/Donation';
+import { useSelector } from 'react-redux';
 
 const Profile = ({ navigation }) => {
     const numColumns = 3
-
+    const donationsData = useSelector((state) => state.reducer.donate.donations);
+    console.log("checking",donationsData)
     return (
         <>
 
@@ -36,18 +38,18 @@ const Profile = ({ navigation }) => {
                 </View>
 
             </View>
-            <View style={{ margin: 5, paddingHorizontal: 10, paddingVertical: 10, backgroundColor: "#e5e5e5", zIndex: 9, elevation: 9, borderRadius: 10 }}>
+            <View style={{}}>
                 <FlatList
-                    data={Donation}
+                    data={donationsData}
                     numColumns={numColumns}
                     renderItem={({ item, index }) => {
-                        
+                        console.log("data",item)
                         
                        return(
-                        <View style={{backgroundColor:'blue'}}>
-                            <Image source={item.img}
+                        <View style={{width:"33%",paddingHorizontal:10,borderRadius:15,padding:2}}>
+                            <Image source={{ uri: item.a }}
                             resizeMode='contain'
-                            style={{height:50,width:50}}
+                            style={{height:150,width:"100%",}}
                           />
                         </View>
                        )
